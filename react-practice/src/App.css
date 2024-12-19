@@ -39,3 +39,23 @@
 .read-the-docs {
   color: #888;
 }
+
+.navbar {
+  list-style: none;
+  display: flex;
+}
+
+.Header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.nav-list-item {
+  margin-left: 10px;
+  font-size: 1.1rem;
+}
+
+.react-logo {
+  width: 55px;
+}
