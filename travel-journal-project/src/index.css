@@ -1,0 +1,21 @@
+html, body {
+    margin: 0;
+}
+
+.Header {
+    background: #F55A5A;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    height: 55px;
+}
+
+.globe-icon {
+    margin-right: 7px;
+}
+
+.Header h1 {
+    font-size: 1.5rem;
+    font-weight: 500;
+}
