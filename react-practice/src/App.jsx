@@ -1,8 +1,9 @@
 import './App.css'
-import MainContent from './MainContent'
-import Header from "./Header";
-import Footer from './Footer';
+import MainContent from './components/MainContent'
+import Header from "./components/Header";
+import Footer from './components/Footer';
 
+//1:50:03
 
 function App() {
 
@@ -10,7 +11,7 @@ function App() {
     <>
       <Header />
       <MainContent />
-      <Footer />
+      {/* <Footer /> */}
     </>
   )
 }
