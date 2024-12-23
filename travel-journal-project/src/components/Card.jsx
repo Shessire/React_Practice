@@ -6,13 +6,13 @@ function Card ({ d }) {
             <div className='main-img-container'>
                 <img src={d.img} alt="" />
             </div>
-            <div>
+            <div className='info-container'>
                 <RoomIcon fontSize='large' sx={{ marginRight: "4px"}}/>
                 <span>{d.country}</span>            
                 <a href={d.map}>View on Google Maps</a>
                 <h2>{d.name}</h2>
-                <p>{d.date}</p>
-                <p>{d.description}</p>
+                <p className='date'>{d.date}</p>
+                <p className='desc'>{d.description}</p>
             </div>
         </div>
     )

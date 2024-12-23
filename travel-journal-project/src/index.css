@@ -1,5 +1,6 @@
 html, body, h1 {
     margin: 0;
+    font-family: "Inter", system-ui, Avenir, Helvetica, Arial, sans-serif;
 }
 
 .Header {
@@ -11,14 +12,17 @@ html, body, h1 {
     height: 60px;
 }
 
+.Entry {
+    margin: 45px 40px;
+}
+
 .globe-icon {
     margin-right: 7px;
 }
 
 .Header h1 {
     font-size: 1.5rem;
-    font-weight: 500;
-    font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+    font-weight: 500;    
 }
 
 .Card {
@@ -38,4 +42,37 @@ html, body, h1 {
     height: 100%;
     width: 100%;
     object-fit: cover;
+}
+
+.info-container span {
+    text-transform: uppercase;
+    font-size: 0.7rem;
+    margin-right: 12px;
+}
+
+.info-container a {
+    color: #2B283A;
+    font-size: 0.7rem;
+}
+
+.info-container a:visited {
+    color: #918E9B;
+}
+
+.info-container h2 {
+    margin-top: 7px;
+    margin-bottom: 17px;
+}
+
+.info-container p.date {
+    font-weight: bold;
+}
+
+.info-container p.desc {
+    line-height: 1.5;
+    font-size: 0.8rem;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;  
+    overflow: hidden;
 }
