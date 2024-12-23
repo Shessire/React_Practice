@@ -28,7 +28,9 @@ function App() {
   return (
     <>
       <Header />
-      <Entry data={data} />
+      <main className="container">
+        <Entry data={data} />
+      </main>
     </>
   )
 }

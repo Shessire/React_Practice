@@ -7,7 +7,7 @@ function Card ({ d }) {
                 <img src={d.img} alt="" />
             </div>
             <div className='info-container'>
-                <RoomIcon fontSize='large' sx={{ marginRight: "4px"}}/>
+                <RoomIcon fontSize='small' sx={{ marginRight: "4px", color: "#F55A5A"}}/>
                 <span>{d.country}</span>            
                 <a href={d.map}>View on Google Maps</a>
                 <h2>{d.name}</h2>
