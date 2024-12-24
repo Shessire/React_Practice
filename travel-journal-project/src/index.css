@@ -27,6 +27,7 @@ html, body, h1 {
 
 .Card {
     display: flex;
+    margin-bottom: 20px;
 }
 
 .main-img-container {

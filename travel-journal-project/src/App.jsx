@@ -11,7 +11,7 @@ function App() {
     <>
       <Header />
       <main className="container">
-        <Entry data={data} />
+        <Entry data={dataProp} />
       </main>
     </>
   )
