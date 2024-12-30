@@ -1,25 +1,23 @@
+const ingredients = ["Chicken", "Pepper", "Tomatoes"]
 
 function Main () {
 
-    function handleClick (e) {
-        e.preventDefault();
-        console.log("Clicked!")
-    }
-
-    function handleHover () {
-        console.log("Hovered!")
-    }
-
     return (
         <div className="Main">
-            <form className="add-ingredient-form">
+            <form className="add-ingredient-form" onSubmit={handleSubmit}>
                 <input 
                     type="text"
                     placeholder="e.g. pepper"
-                    aria-label="Add ingredient" 
+                    aria-label="Add ingredient"
+                    name="ingredient" 
                 />
-                <button onClick={handleClick} onMouseOver={handleHover}>Add ingredient</button>
+                <button>Add ingredient</button>
             </form>
+            <ul>
+                {ingredients.map((i) => (
+                    <li key={i}>{i}</li>
+                ))}
+            </ul>
         </div>
     )
 }
