@@ -1,17 +1,25 @@
 import './App.css'
-import MainContent from './components/MainContent'
-import Header from "./components/Header";
-import Footer from './components/Footer';
-
-//1:50:03
+import { useState } from 'react'
 
 function App() {
 
+  const [myFavoriteThings, setMyFavouriteThings] = useState([]);
+  const allFavoriteThings = ["💦🌹", "😺", "💡🫖", "🔥🧤", "🟤🎁", 
+  "🐴", "🍎🥧", "🚪🔔", "🛷🔔", "🥩🍝"]
+  const thingsElements = myFavoriteThings.map(thing => <p key={thing}>{thing}</p>)
+
+  function addFavoriteThing() {
+    setMyFavouriteThings((prev) => (
+      [...prev, allFavoriteThings[prev.length]]
+    ))
+  }
+
   return (
     <>
-      <Header />
-      <MainContent />
-      {/* <Footer /> */}
+      <button onClick={addFavoriteThing}>Add item</button>
+      <section aria-live="polite">
+        {thingsElements}
+      </section>
     </>
   )
 }
