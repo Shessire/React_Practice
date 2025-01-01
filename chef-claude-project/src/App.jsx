@@ -1,15 +1,15 @@
 import Header from "./components/Header"
 import Main from "./components/Main"
-import Test from "./components/Test"
+import FormTest from "./components/FormTest"
 import "./App.css"
 
 function App() {
   
   return (
     <>
-      <Header />
-      <Main />
-      <Test />
+      {/* <Header />
+      <Main /> */}
+      <FormTest />
     </>
   )
 }
