@@ -40,13 +40,17 @@ function Main () {
                             <li key={index}>{i}</li>
                         ))}
                     </ul>
-                    <div className="get-recipe-container">
-                        <div>
-                            <h3>Ready for a recipe?</h3>
-                            <p>Generate a recipe from your list of ingredients.</p>
+                    {ingredient.length > 2 
+                    ?
+                        <div className="get-recipe-container">
+                            <div>
+                                <h3>Ready for a recipe?</h3>
+                                <p>Generate a recipe from your list of ingredients.</p>
+                            </div>
+                            <button>Get a recipe</button>
                         </div>
-                        <button>Get a recipe</button>
-                    </div>
+                    : null
+                    }
                 </section>
             : null
             }
