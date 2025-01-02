@@ -1,6 +1,7 @@
 import Header from "./components/Header"
 import Main from "./components/Main"
-import FormTest from "./components/FormTest"
+import TestConditional from "./components/TestConditional"
+import JokesData from "./JokesData"
 import "./App.css"
 
 function App() {
@@ -9,7 +10,11 @@ function App() {
     <>
       {/* <Header />
       <Main /> */}
-      <FormTest />
+      {
+        JokesData.map((j) => (
+          <TestConditional props={j} />
+        ))
+      }
     </>
   )
 }
