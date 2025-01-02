@@ -1,13 +1,14 @@
 import './App.css'
 import { useState } from 'react'
-import pads from './pads'
+import padsData from './pads'
+import Pad from './components/Pad'
 
 function App() {
 
-  const [pad, setPad] = useState(pads)
-
-  const buttonElements = pad.map((p) => (
-    <button key={p.id} ></button>
+  const [pads, setPads] = useState(padsData)
+  
+  const buttonElements = pads.map((p) => (
+    <Pad key={p.id} color={p.color} on={p.on}/>
   ))
 
   return (
