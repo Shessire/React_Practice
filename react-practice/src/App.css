@@ -1,56 +1,29 @@
 * {
   box-sizing: border-box;
 }
-/* 
+
 body {
-  margin: 0;
-} */
-
-h1 {
-  margin: 0;
+  background-color: #1C1917;
 }
 
-.Header {
+main {
   display: flex;
+  justify-content: center;
   align-items: center;
-  background-color: #21222A;
-  height: 90px;
 }
 
-.Header h3 {
-  color: #61dafb;
-  font-weight: 700;
+.pad-container {
+  display: grid;
+  grid-template-columns: repeat(4, 100px);
+  grid-template-rows: repeat(2, 100px);
+  gap: 10px;
 }
 
-.react-logo {
-  width: 55px;
-  margin: 10px;
-}
-
-.MainContent {
-  background-color: #282D35;
-  padding: 10px;
-  background-image: url(./assets/react.svg);
-  background-repeat: no-repeat;
-  background-position-x: right ;
-  background-position-y: center;
-}
-
-.MainContent h1{
-  color: white;
-}
-
-.MainContent ul {
-  margin-top: 46px;
-  max-width: 400px;
-}
-
-.MainContent li {
-  color: white;
-  margin-block: 10px;
-}
-
-.MainContent li::marker {
-  color: #61dafb;
-  font-size: 1.5rem;
+button {
+  height: 100px;
+  width: 100px;
+  border: 3px solid white;
+  border-radius: 5px;
+  cursor: pointer;
+  
 }

@@ -1,25 +1,20 @@
 import './App.css'
 import { useState } from 'react'
+import pads from './pads'
 
 function App() {
 
-  const [myFavoriteThings, setMyFavouriteThings] = useState([]);
-  const allFavoriteThings = ["💦🌹", "😺", "💡🫖", "🔥🧤", "🟤🎁", 
-  "🐴", "🍎🥧", "🚪🔔", "🛷🔔", "🥩🍝"]
-  const thingsElements = myFavoriteThings.map(thing => <p key={thing}>{thing}</p>)
+  const [pad, setPad] = useState(pads)
 
-  function addFavoriteThing() {
-    setMyFavouriteThings((prev) => (
-      [...prev, allFavoriteThings[prev.length]]
-    ))
-  }
+  const buttonElements = pad.map((p) => (
+    <button key={p.id} ></button>
+  ))
 
   return (
     <>
-      <button onClick={addFavoriteThing}>Add item</button>
-      <section aria-live="polite">
-        {thingsElements}
-      </section>
+      <div className='pad-container'>
+        {buttonElements}
+      </div>
     </>
   )
 }
