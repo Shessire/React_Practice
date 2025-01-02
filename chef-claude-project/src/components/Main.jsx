@@ -4,6 +4,7 @@ function Main () {
 
     const [ingredient, setIngredient] = useState([])
     const [inputValue, setInputValue] = useState("")
+    const [recipeShown, setRecipeShown] = useState(false)
 
     function handleOnChange (e) {
         setInputValue(e.target.value)
@@ -16,6 +17,10 @@ function Main () {
             setInputValue("");
         }
 
+    }
+
+    function toggle () {
+        setRecipeShown(prev => !prev)
     }
 
     return (
@@ -47,12 +52,17 @@ function Main () {
                                 <h3>Ready for a recipe?</h3>
                                 <p>Generate a recipe from your list of ingredients.</p>
                             </div>
-                            <button>Get a recipe</button>
+                            <button onClick={toggle}>Get a recipe</button>
                         </div>
                     : null
                     }
                 </section>
             : null
+            }
+            {
+                recipeShown 
+                ? <h1>This will be shown if u hit the button!</h1>
+                : null
             }
         </div>
     )
