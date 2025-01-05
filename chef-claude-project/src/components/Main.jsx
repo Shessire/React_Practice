@@ -1,4 +1,6 @@
 import { useState } from "react";
+import Recipe from "./Recipe";
+import IngredientList from "./IngredientList";
 
 function Main () {
 
@@ -36,32 +38,14 @@ function Main () {
                 />
                 <button>Add ingredient</button>
             </form>
-            {ingredient.length > 0 
-            ?
-                <section>
-                    <h2>Ingredients on hand:</h2>
-                    <ul className="ingredients-list" aria-live="polite">
-                        {ingredient.map((i, index) => (
-                            <li key={index}>{i}</li>
-                        ))}
-                    </ul>
-                    {ingredient.length > 2 
-                    ?
-                        <div className="get-recipe-container">
-                            <div>
-                                <h3>Ready for a recipe?</h3>
-                                <p>Generate a recipe from your list of ingredients.</p>
-                            </div>
-                            <button onClick={toggle}>Get a recipe</button>
-                        </div>
-                    : null
-                    }
-                </section>
-            : null
+            {
+                ingredient.length > 0 
+                ? <IngredientList ingredient={ingredient} toggle={toggle} />                
+                : null
             }
             {
-                recipeShown 
-                ? <h1>This will be shown if u hit the button!</h1>
+                recipeShown
+                ? <Recipe />
                 : null
             }
         </div>
