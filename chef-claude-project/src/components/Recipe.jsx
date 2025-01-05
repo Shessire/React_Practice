@@ -1,7 +1,7 @@
-export default function Recipe () {
+export default function Recipe ({ recipe }) {
     return (
         <div>
-            <h1>This will be shown if u hit the button!</h1>
+            {recipe}
         </div>
     )
 }

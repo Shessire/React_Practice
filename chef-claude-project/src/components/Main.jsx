@@ -1,13 +1,13 @@
 import { useState } from "react";
 import Recipe from "./Recipe";
 import IngredientList from "./IngredientList";
-import { getRecipeFromMistral } from "../ai";
+import { getRecipeFromMistral } from "../../ai";
 
 function Main () {
 
     const [ingredient, setIngredient] = useState([])
     const [inputValue, setInputValue] = useState("")
-    const [recipeShown, setRecipeShown] = useState(false)
+    const [recipe, setRecipe] = useState("")
 
     function handleOnChange (e) {
         setInputValue(e.target.value)
@@ -22,8 +22,9 @@ function Main () {
 
     }
 
-    function toggle () {
-        setRecipeShown(prev => !prev)
+    async function getRecipe () {
+        const recipeMarkDown = await getRecipeFromMistral(ingredient)
+        setRecipe(recipeMarkDown)
     }
 
     return (
@@ -41,12 +42,12 @@ function Main () {
             </form>
             {
                 ingredient.length > 0 
-                ? <IngredientList ingredient={ingredient} toggle={toggle} />                
+                ? <IngredientList ingredient={ingredient} getRecipe={getRecipe} />                
                 : null
             }
             {
-                recipeShown
-                ? <Recipe />
+                recipe
+                ? <Recipe recipe={recipe} />
                 : null
             }
         </div>

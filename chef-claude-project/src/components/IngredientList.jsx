@@ -1,4 +1,4 @@
-export default function IngredientList ({ ingredient, toggle }) {
+export default function IngredientList ({ ingredient, getRecipe }) {
     return (
         <div>
             <section>
@@ -15,7 +15,7 @@ export default function IngredientList ({ ingredient, toggle }) {
                                 <h3>Ready for a recipe?</h3>
                                 <p>Generate a recipe from your list of ingredients.</p>
                             </div>
-                            <button onClick={toggle}>Get a recipe</button>
+                            <button onClick={getRecipe}>Get a recipe</button>
                         </div>
                     : null
                     }
