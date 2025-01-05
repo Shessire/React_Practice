@@ -25,6 +25,10 @@ body {
     padding: 30px 30px 10px;
 }
 
+.order-list {
+    line-height: 2.5rem;
+}
+
 .add-ingredient-form {
     display: flex;
     justify-content: center;
@@ -53,6 +57,15 @@ body {
     font-size: 0.875rem;
     font-weight: 500;
     cursor: pointer;
+}
+
+.add-ingredient-form button.reset-btn {
+    background-color: #32c976;
+}
+
+.add-ingredient-form button.reset-btn::before {
+    background-color: #32c976;
+    content: "💙";
 }
 
 .add-ingredient-form button::before {

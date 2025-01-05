@@ -1,6 +1,7 @@
 import { useState } from "react";
 import Recipe from "./Recipe";
 import IngredientList from "./IngredientList";
+import Intro from "./Intro";
 import { getRecipeFromMistral } from "../../ai";
 
 function Main () {
@@ -22,6 +23,12 @@ function Main () {
 
     }
 
+    function reset () {
+        setIngredient([])
+        setInputValue("")
+        setRecipe("")
+    }
+
     async function getRecipe () {
         const recipeMarkDown = await getRecipeFromMistral(ingredient)
         setRecipe(recipeMarkDown)
@@ -39,7 +46,10 @@ function Main () {
                     onChange={handleOnChange} 
                 />
                 <button>Add ingredient</button>
+                <button className="reset-btn" type="button" onClick={reset}>Reset</button>
             </form>
+            <Intro />            
+            <hr />
             {
                 ingredient.length > 0 
                 ? <IngredientList ingredient={ingredient} getRecipe={getRecipe} />                
