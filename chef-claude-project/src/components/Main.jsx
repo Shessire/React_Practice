@@ -1,6 +1,7 @@
 import { useState } from "react";
 import Recipe from "./Recipe";
 import IngredientList from "./IngredientList";
+import { getRecipeFromMistral } from "../ai";
 
 function Main () {
 
