@@ -1,25 +1,22 @@
+import { useState } from "react"
+import WindowTracker from "./assets/components/WindowTracker"
 
-import { useEffect, useState } from 'react'
-import './App.css'
+function App() {
+  const [show, setShow] = useState(true)
 
-function App(props) {
-  const [starWarsData, setStarWarsData] = useState(null)
-  const [count, setCount] = useState(1)
-
-  useEffect(function() {
-    fetch(`https://akabab.github.io/starwars-api/api/id/${count}.json`)
-      .then(res => res.json())
-      .then(data => setStarWarsData(data))
-  }, [count])
-
-  function handleClick () {
-    setCount(prev => prev + 1)
+  function toggleShow () {
+    setShow((prev) => !prev)
   }
 
   return (
     <>
-      <button onClick={handleClick}>Next</button>
-      <pre>{JSON.stringify(starWarsData, null, 2)}</pre>
+      <button onClick={toggleShow}>
+        Toggle WindowTracker
+      </button>
+      {show 
+        ? <WindowTracker />
+        : null
+      }
     </>
   )
 }
